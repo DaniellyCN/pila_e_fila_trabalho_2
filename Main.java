@@ -23,16 +23,19 @@ public class Main {
 
         
         try{
+            System.out.println("----Lista de alunos----");
+            lista_fila_alunos.imprimirLista();
             while (!lista_fila_alunos.vazio()) {
                 Aluno aluno = lista_fila_alunos.removeReturn();
                 pilha_aluno.push(aluno);
-                System.out.println(aluno.getNome());
             }
 
             while (!pilha_aluno.isEmpty()) {
-            Aluno aluno = pilha_aluno.pop();
-            System.out.println(aluno.getNome());
-        }
+                Aluno aluno = pilha_aluno.pop();
+                lista_fila_alunos.inserir(aluno);
+            }
+            System.out.println("----Lista de alunos invertida----");
+            lista_fila_alunos.imprimirLista();
         }catch(Exception error){
             System.out.println(error.getMessage()); 
         }

@@ -68,4 +68,16 @@ public class ListaFila implements IFila{
         return alunoRemovido;
     }
 
+    public void imprimirLista() {
+        if (vazio()) {
+            System.out.println("A lista está vazia");
+        } else {
+            Noh atual = primeiro;
+            while (atual != null) {
+                System.out.println(atual.getContent());
+                atual = atual.getNext();
+            }
+        }
+    }
+
 }
